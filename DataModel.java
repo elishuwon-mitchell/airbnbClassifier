@@ -16,7 +16,7 @@ public class DataModel {
 	
 	//----------------------------------- Constructor --------------------------------------------
 
-	public PreProcess(String trainingData, String delimitor, boolean containsHeader) {		
+	public DataModel(String trainingData, String delimitor, boolean containsHeader) {		
 		
 		dataMap = new HashMap<String, Record>();
 		badData = new HashMap<String, Record>();
