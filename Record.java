@@ -22,21 +22,31 @@ public class Record {
 		data = new ArrayList<String>();
 	}
 	
-	//------------------------ Methods --------------------------------
+	//------------------------ Set Methods --------------------------------
 	
-	public void addItem(String item){
+	public void addAttr(String item){
 		data.add(item);
 	}
 	
+	public void updateAttrVal(int index, String val){
+		data.set(index, val);
+	}
+	
+	//------------------------ Get Methods --------------------------------
+
 	public String getId(){
 		return id;
 	}
 	
-	public String getAttrValue(int index){
+	public String getAttrVal(int index){
 		return data.get(index);
 	}
 	
-	public String getClassVal(){
+	public String getClassLabel(){
 		return data.get(data.size() - 1);
+	}
+	
+	public ArrayList<String>  getData(){
+		return data;
 	}
 }
