@@ -2,7 +2,6 @@
 
 A TUTOR OR CODE WRITTEN BY OTHER STUDENTS - Colvin Zhu*/
 
-package airbnb;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
