@@ -254,4 +254,8 @@ public class DataRecords {
 		}
 		this.nullChars = nullChars;
 	}
+	
+	public Record[] getAllRecords(){
+		return data;
+	}
 }

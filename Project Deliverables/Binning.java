@@ -6,7 +6,6 @@ package airbnb;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import java.util.Scanner;
@@ -16,7 +15,7 @@ import java.util.Scanner;
  *
  */
 public class Binning {
-	
+		
 	/*--------------------------------Read In Data-----------------------------------*/
 	/**
 	 * 
@@ -71,32 +70,5 @@ public class Binning {
 		
 		
 	}
-	
-	
-	public static void main(String[] args) throws FileNotFoundException{
-		
-		String inputFile = "C:\\Users\\Elishuwon\\Desktop\\trainingDataNoMissingValues.csv";
-		String outputFile =  "C:\\Users\\Elishuwon\\Desktop\\preprocessedTrainingData.csv";
-		String delimitor = ",";
-		
-		PrintWriter writer = new PrintWriter(outputFile) ;
-		
-		ArrayList<ArrayList<String>> data = readData(inputFile, delimitor);
-		
-		binAttr(data, 4, 18, 5); //bin age attribute
-		binAttr(data, 6, 0, 5); //bin signup_flow attribute
-
-
-		for(ArrayList<String> a: data){
-			writer.print(a.get(0) + ",");
-			for(int i = 1; i < a.size()-1; i++){
-				writer.print(a.get(i)+",");
-			}
-			writer.println(a.get(a.size()-1));
-		}
-
-		writer.close();
-	}
-	
 	
 }

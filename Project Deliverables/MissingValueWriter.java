@@ -1,7 +1,6 @@
 package airbnb;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,16 +16,19 @@ public class MissingValueWriter {
 		schema = dataModel.getSchema();
 	}
 	
-	public void writeFile() throws IOException{
+	public ArrayList<ArrayList<String>> fillMissingValues(){
+		
+		
 		Record record;
 		List<Integer> cluster;
 		
 		Map<Integer, Double> averages = new HashMap<Integer, Double>();
 		Map<Integer, String> modes = new HashMap<Integer, String>();
 				
-		PrintWriter writer = new PrintWriter("C:\\Users\\Elishuwon\\Desktop\\trainingDataNoMissingValues.csv");
 
 		for (int C=0; C<clusters.size(); C++){
+			
+
 			cluster = clusters.get(C);
 			averages.clear();
 			modes.clear();
@@ -52,17 +54,30 @@ public class MissingValueWriter {
 							record.setCatAttr(a, modes.get(a));
 						}
 					}
-				}
-								
-				writer.println(record.toString());
-
+				}		
+			
 			}
+
 		}
 		
-		writer.flush();
-		writer.close();
-//		writer1.flush();
-//		writer1.close();
+		ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
+
+		
+		
+		for(Record r: dataModel.getAllRecords()){
+			
+			ArrayList<String> subList = new ArrayList<String>();
+
+			String[] str = r.toString().split(",");
+			
+			for(String s: str)
+				subList.add(s);
+
+			list.add(subList);
+			
+		}
+		
+		return list;
 	}
 	
 	
