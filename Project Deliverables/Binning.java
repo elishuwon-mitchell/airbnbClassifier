@@ -1,8 +1,3 @@
-/**
- * 
- */
-package airbnb;
-
 
 import java.io.File;
 import java.io.FileNotFoundException;
