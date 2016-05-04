@@ -6,8 +6,6 @@ Based on AbstractKMeans.java by Jinho D. Choi:
 https://github.com/emory-courses/cs325/blob/master/src/main/java/edu/emory/mathcs/cs325/document/AbstractKmeans.java
 */
 
-package airbnb;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
